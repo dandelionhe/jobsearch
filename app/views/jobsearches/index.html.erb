@@ -1,0 +1,28 @@
+<div class="col-md-4 col-md-offset-4">
+
+
+</div>
+
+<div class="col-md-8 col-md-offset-2">
+
+	<table class="table table-hover">
+		<thead>
+			<tr>
+				<td>Title</td>
+				<td>Description</td>
+			</tr>
+		</thead>
+		<tbody>
+
+			<% @articles.each do |article| %>
+			<tr>
+				<td><%= link_to article.title,article %></td>
+				<td><%= link_to article.body[50..200],article %></td>
+			</tr>
+
+			<% end %>
+		</tbody>
+<%= will_paginate @articles %>
+	</table>
+
+</div>
